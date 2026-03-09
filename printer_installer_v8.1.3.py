@@ -815,8 +815,7 @@ def install_lan(ip, model, name, cb_log, t_fn=None):
     cb_log(f"  [3/5] Port yaradılır: {pn} → {ip}:{PORT}…")
     ok_port, err_port = ps_run(
         f"$p=Get-PrinterPort -Name '{pn}' -EA SilentlyContinue;"
-        f"if($p){{Set-PrinterPort -Name '{pn}' -PrinterHostAddress '{ip}' -PortNumber {PORT}}}"
-        f"else{{Add-PrinterPort -Name '{pn}' -PrinterHostAddress '{ip}' -PortNumber {PORT}}}",
+        f"if(-not $p){{Add-PrinterPort -Name '{pn}' -PrinterHostAddress '{ip}' -PortNumber {PORT}}}",
         timeout=45)
     if ok_port:
         cb_log(f"  [3/5] ✓ Port əmri uğurlu")
