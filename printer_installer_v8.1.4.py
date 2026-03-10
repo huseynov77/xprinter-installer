@@ -16,7 +16,7 @@ import time
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-VERSION = "8.1"
+VERSION = "8.1.4"
 APP_TITLE = f"CloPos XPrinter Auto-Installer v{VERSION}"
 
 # ═══ UAC — Admin olaraq yenidən aç ══════════════════════════════
